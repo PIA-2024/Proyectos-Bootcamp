@@ -1,5 +1,3 @@
-
-
 # Paso 1. Abre el archivo de datos y estudia la información general
 
 
