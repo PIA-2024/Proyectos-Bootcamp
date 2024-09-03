@@ -34,6 +34,6 @@ NumOfProducts: número de productos bancarios utilizados por el cliente
 HasCrCard: el cliente tiene una tarjeta de crédito (1 - sí; 0 - no)
 IsActiveMember: actividad del cliente (1 - sí; 0 - no)
 EstimatedSalary: salario estimado
-Objetivo
 
+Objetivo
 Exited: El cliente se ha ido (1 - sí; 0 - no)
