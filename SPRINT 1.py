@@ -1,46 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # ¡Hola Pia!
-# 
-# Mi nombre es Ezequiel Ferrario, soy code reviewer en Tripleten y tengo el agrado de revisar el proyecto que entregaste.
-# 
-# Para simular la dinámica de un ambiente de trabajo, si veo algún error, en primer instancia solo los señalaré, dándote la oportunidad de encontrarlos y corregirlos por tu cuenta. En un trabajo real, el líder de tu equipo hará una dinámica similar. En caso de que no puedas resolver la tarea, te daré una información más precisa en la próxima revisión.
-# 
-# Encontrarás mis comentarios más abajo - **por favor, no los muevas, no los modifiques ni los borres**.
-# 
-# ¿Cómo lo voy a hacer? Voy a leer detenidamente cada una de las implementaciones que has llevado a cabo para cumplir con lo solicitado. Verás los comentarios de esta forma:
-# 
-# <div class="alert alert-block alert-success">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Si todo está perfecto.
-# </div>
-# 
-# 
-# <div class="alert alert-block alert-warning">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Si tu código está bien pero se puede mejorar o hay algún detalle que le hace falta. Se aceptan uno o dos comentarios de este tipo en el borrador, pero si hay más, deberá hacer las correcciones. Es como una tarea de prueba al solicitar un trabajo: muchos pequeños errores pueden hacer que un candidato sea rechazado.
-# </div>
-# 
-# <div class="alert alert-block alert-danger">
-# 
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Si de pronto hace falta algo o existe algún problema con tu código o conclusiones.
-# </div>
-# 
-# Puedes responderme de esta forma
-# 
-# <div class="alert alert-block alert-info">
-# <b>Respuesta del estudiante</b> <a class="tocSkip"></a>
-# 
-# Hola, muchas gracias por tus comentarios y la revisión.
-# </div>
-# 
-# ¡Empecemos!
-
 # Una empresa de comercio electrónico, Store 1, recientemente comenzó a recopilar datos sobre sus clientes. El objetivo final de Store 1 es comprender mejor el comportamiento de sus clientes y tomar decisiones basadas en datos para mejorar su experiencia online.
 # 
 # Como parte del equipo de análisis, tu primera tarea es evaluar la calidad de una muestra de datos recopilados y prepararla para futuros análisis.
@@ -68,27 +25,10 @@ fav_categories = ['ELECTRONICS', 'SPORT', 'BOOKS']
 #     
 # 4. La lista `fav_categories` contiene cadenas en mayúsculas. En su lugar, deberíamos convertir los valores de la lista a minúsculas.
 
-# **Escribe tu respuesta y explica tu argumentación:**
-# 
-
-# Escribe en la celda Markdown a continuación el número de las opciones que has identificado como problemas. Si has identificado varios problemas, sepáralos con comas. Por ejemplo, si crees que los números 1 y 3 son correctos, escribe 1, 3.
-
-# De acuerdo a las opciones entregadas , veo que la opción 2 y 3 son errores que uno debiese arreglar , para que al trabajar con ellos hayan menos errores o cambios que hacer en el codigo. En la opción 2 debiese eliminar espacios y el signo _ . En la opción 3 debiese cambiarse el valor a un numero entenro con la funcion int()
-
-# <div class="alert alert-block alert-danger">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Recorda dejar las opciones que crees que son correctas (Que contienen errores) y argumentarlas en formato **markdown**.
-# </div>
-
-# No capte que habia que escribir la respuesta , perdon : D
 
 # # Ejercicio 1
 # 
 # Vamos a implementar los cambios que identificamos. Primero, necesitamos corregir los problemas de la variable `user_name`. Como vimos, tiene espacios innecesarios y un guion bajo como separador entre el nombre y el apellido; tu objetivo es eliminar los espacios y luego reemplazar el guion bajo con el espacio.
-
-# In[4]:
-
 
 user_name = ' mike_reed '
 user_name = user_name.strip() # eliminar los espacios en la cadena original
@@ -97,16 +37,9 @@ user_name = user_name.replace("_", " ")# reemplazar el guion bajo con el espacio
 print(user_name)
 
 
-# <div class="alert alert-block alert-success">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Muy bien.</div>
-
 # # Ejercicio 2
 # 
 # Luego, debemos dividir el `user_name` (nombre de usuario o usuaria) actualizado en dos subcadenas para obtener una lista que contenga dos valores: la cadena para el nombre y la cadena para el apellido.
-
-# In[5]:
 
 
 user_name = 'mike reed'
@@ -120,9 +53,6 @@ print(name_split)
 # 
 # ¡Genial! Ahora debemos trabajar con la variable `user_age`. Como ya mencionamos, esta tiene un tipo de datos incorrecto. Arreglemos este problema transformando el tipo de datos y mostrando el resultado final.
 
-# In[6]:
-
-
 user_age = 32.0
 user_age = int(user_age)# cambia el tipo de datos para la edad de un usuario o usuaria
 
@@ -135,8 +65,6 @@ print(user_age)
 # 
 # Escribe un código que intente convertir la variable `user_age` en un número entero y asigna el valor transformado a `user_age_int`. Si el intento falla, mostramos un mensaje pidiendo al usuario o la usuaria que proporcione su edad como un valor numérico con el mensaje: `Please provide your age as a numerical value.` (Proporcione su edad como un valor numérico.)
 
-# In[7]:
-
 
 user_age = 'treinta y dos' # aquí está la variable que almacena la edad como un string.
 
@@ -146,17 +74,9 @@ try:
 except ValueError:
     print("Por favor, proporcione su edad como un valor numérico.")# escribe un código que intente transformar user_age en un entero y si falla, imprime el mensaje especificado
 
-
-# <div class="alert alert-block alert-success">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Bien utilizado el **try-except**.</div>
-
 # # Ejercicio 5
 # 
 # Finalmente, considera que todas las categorías favoritas se almacenan en mayúsculas. Para llenar una nueva lista llamada `fav_categories_low` con las mismas categorías, pero en minúsculas, itera los valores en la lista `fav_categories`, modifícalos y agrega los nuevos valores a la lista `fav_categories_low`. Como siempre, muestra el resultado final.
-
-# In[1]:
 
 
 fav_categories = ['ELECTRONICS', 'SPORT', 'BOOKS']
@@ -179,8 +99,6 @@ print(fav_categories_low)
 # 
 # Vamos a calcular estos valores y mostrarlos en la pantalla:
 
-# In[3]:
-
 
 fav_categories_low = ['electronics', 'sport', 'books']
 spendings_per_category = [894, 213, 173]
@@ -195,11 +113,6 @@ print(max_amount)
 print(min_amount)
 
 
-# <div class="alert alert-block alert-success">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Muy bien.</div>
-
 # # Ejercicio 7
 # 
 # La empresa quiere ofrecer descuentos a sus clientes leales. Los clientes y las clientas que realizan compras por un importe total mayor a $1500 se consideran leales y recibirán un descuento.
@@ -207,8 +120,6 @@ print(min_amount)
 # Nuestro objetivo es crear un bucle `while` que compruebe el importe total gastado y se detenga al alcanzarlo. Para simular nuevas compras, la variable `new_purchase` genera un número entre 30 y 80 en cada iteración del bucle. Esto representa el importe de dinero gastado en una nueva compra y es lo que hay que sumar al total.
 # 
 # Una vez que se alcance el importe objetivo y se termine el bucle `while`, se mostrará la cantidad final.
-
-# In[6]:
 
 
 from random import randint
@@ -223,19 +134,11 @@ while total_amount_spent < target_amount: # escribe tu código aquí
 print(total_amount_spent)
 
 
-# <div class="alert alert-block alert-success">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Perfecto.</div>
-
 # # Ejercicio 8
 # 
 # Ahora tenemos toda la información sobre un cliente o una clienta de la forma que queremos que sea. La gerencia de una empresa nos pidió proponer una forma de resumir toda la información sobre un usuario o una usuaria. Tu objetivo es crear una cadena formateada que utilice información de las variables `user_id`, `user_name` y `user_age`.
 # 
 # Esta es la cadena final que queremos crear: `User 32415 is mike who is 32 years old.` (El usuario 32415 es Mike, quien tiene 32 años).
-
-# In[1]:
-
 
 user_id = '32415'
 user_name = ['mike', 'reed']
@@ -246,13 +149,6 @@ user_info = "user {} is {} who is {} years old".format(user_id, user_name[0], us
 # no elimines la siguiente declaración print
 print(user_info)
 
-
-# <div class="alert alert-block alert-danger">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Esta bien utilizado el *format*. Solo que aqui queremos extraer el nombre, llamalo utilizando el indice de `user_name`.</div>
-
-# corregido , ahora solo muestra el nombre y no la lista de su nombre 
 
 # Como sabes, las empresas recopilan y almacenan datos de una forma particular. Store 1 desea almacenar toda la información sobre sus clientes y clientas en una tabla.
 # 
@@ -274,8 +170,6 @@ print(user_info)
 # 3. Actualiza el valor de los ingresos con el total de cada usuario o usuaria.
 # 
 # Así obtendrás los ingresos totales de la empresa que mostrarás en la pantalla al final.
-
-# In[23]:
 
 
 users = [
@@ -381,11 +275,6 @@ for user in users:
         print(user[1])
 
 
-# <div class="alert alert-block alert-success">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Perfecto uso de las expresiones anidadas.</div>
-
 # # Ejercicio 12
 # 
 # Ahora vamos a mostrar el nombre y la edad de todos los usuarios y todas las usuarias que han comprado ropa. Imprime el nombre y la edad en la misma declaración print.
@@ -420,27 +309,3 @@ for user in users:  #escribe tu código aquí
     if 'clothes' in user[3]  :
         print(f'Nombre: {user[1][0]}, Edad: {user[2]} años.')
 
-
-# <div class="alert alert-block alert-success">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Perfecto. Como consejo podrias crear un f-string para que el resultado sea mas estetico.
-# 
-# Algo asi como '*Nombre: Kate, edad 24 años.*'</div>
-
-# Agregada la recomendación del f-string
-
-# Es necesario tener varios apuntes de las funciones de como se utilizaban , porque uno puede tener notas de cual función o metodo debo utilizar pero no siempre escribo el ejemplo practico y al momento de usarlo no recuerdo como se escribia y tener que devolverse a ver la materia pierdo mucho tiempo #Escribe aquí cualquier comentario o reflexión final
-
-# <div class="alert alert-block alert-danger">
-# <b>Comentario general #1</b> <a class="tocSkip"></a>
-# 
-# Pia, hiciste un gran trabajo donde completaste todos los ejercicios necesarios.
-# 
-# Entendiste que hacer con cada celda y que se buscaba en el mismo.
-# 
-# Restan detalles pero que estan muy encaminados hacia el resultado final.
-# 
-# Quedo a la espera de tus correcciones, saludos.</div>
-
-# Muchas gracias , me sigo esforzando para aprender mas.
