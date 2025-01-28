@@ -36,13 +36,20 @@ Los datos se almacenan en el archivo /datasets/music_project_en.csv. También pu
 # Descripción de las columnas:
 
 'userID': identifica de forma exclusiva a cada usuario o usuaria;
+
 'Track': título de la canción;
+
 'artist': nombre del artista;
+
 'genre': género musical;
+
 'City': ciudad del usuario o la usuaria;
+
 'time': hora del día en la que se reprodujo la pista (HH:MM:SS);
+
 'Day': día de la semana.
-Instrucciones para completar el proyecto
+
+# Instrucciones para completar el proyecto
 Se te proporciona una plantilla del cuaderno, donde puedes escribir tu código y proporcionar descripciones de tu análisis. Para completar el proyecto, rellena cada celda de código en la plantilla y edita las celdas Markdown donde la plantilla te pide que expliques tus resultados.
 
 Siempre es una buena práctica incluir una introducción que describa brevemente tus objetivos y una conclusión que resuma tus resultados en forma de celdas Markdown. 
