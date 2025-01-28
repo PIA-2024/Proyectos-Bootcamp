@@ -2,7 +2,7 @@
 
 "Probar una hipótesis de producto analizando datos de usuario para incrementar la fidelizacion de clientes en un servicio de streaming musical." En este proyecto se pone a prueba el manejo de dataframes, la limpieza de datos y la capacidad de relacionar dafaframes distintos.
 
-Las herramientas utilizadas son: Python , Analisis estadistico, Procesamiento de datos.
+Las habilidades/herramientas utilizadas: Python , Analisis estadistico, Procesamiento de datos.
 
 # Descripción del proyecto
 Como analista de datos, tu trabajo consiste en analizar datos para extraer información valiosa y tomar decisiones basadas en ellos. Esto implica diferentes etapas, como la descripción general de los datos, el preprocesamiento y la prueba de hipótesis.
