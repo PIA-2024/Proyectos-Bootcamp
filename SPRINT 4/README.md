@@ -1,3 +1,10 @@
+# Proyecto del Sprint 4: Análisis estadístico de datos
+"Comparar los dos planes de prepago de un operador de telecomunicaciones para determinar cual de los dos planes generaria más beneficios."
+
+El objetivo de este proyecto es usar estadistica para diferenciar poblaciones a trabes de pruebas T, asi como generar conclusiones basadas en datos.
+
+Herramientas/habilidades utilizadas: Analisis estadistico , Python 
+
 # Descripción del proyecto
 Trabajas como analista para el operador de telecomunicaciones Megaline. La empresa ofrece a sus clientes dos tarifas de prepago, Surf y Ultimate. El departamento comercial quiere saber cuál de los planes genera más ingresos para poder ajustar el presupuesto de publicidad.
 
@@ -98,15 +105,24 @@ A continuación encontrarás las rutas de los archivos que hay que leer, junto c
 # Paso 2. Prepara los datos
 
 Convierte los datos en los tipos necesarios.
+
 Encuentra y elimina errores en los datos. Asegúrate de explicar qué errores encontraste y cómo los eliminaste.
+
 Para cada usuario, busca:
 
 El número de llamadas realizadas y minutos utilizados al mes.
+
 La cantidad de los SMS enviados por mes.
+
 El volumen de datos por mes.
-Los ingresos mensuales por cada usuario. Para ello, necesitas:
+
+Los ingresos mensuales por cada usuario. 
+Para ello, necesitas:
+
 Restar el límite del paquete gratuito del número total de llamadas, mensajes de texto y datos.
+
 Multiplicar el resultado por el valor de la tarifa de llamadas.
+
 Añadir la cuota mensual en función del plan de llamadas.
 
 # Paso 3. Analiza los datos
@@ -114,18 +130,26 @@ Añadir la cuota mensual en función del plan de llamadas.
 Describe el comportamiento de la clientela:
 
 Encuentra los minutos, SMS y volumen de datos que requieren los usuarios de cada tarifa por mes.
+
 Calcula la media, la varianza y la desviación estándar.
+
 Traza histogramas. Describe las distribuciones.
 
 # Paso 4. Prueba las hipótesis
 
 El ingreso promedio de los usuarios de las tarifas Ultimate y Surf difiere.
+
 El ingreso promedio de los usuarios en el área de estados Nueva York-Nueva Jersey es diferente al de los usuarios de otras regiones.
-Tú decides qué valor alfa usar. Además, tienes que explicar:
+
+Tú decides qué valor alfa usar.
+
+Además, tienes que explicar:
 
 Cómo formulaste las hipótesis nula y alternativa.
+
 Qué criterio utilizaste para probar las hipótesis y por qué.
 
 # Paso 5. Escribe una conclusión general
 
-Formato: Completa todas las tareas en un Jupyter Notebook. Almacena todo el código en las celdas code y las explicaciones de texto en las celdas markdown. Añade títulos y el formato adecuado si es necesario.
+Formato: Completa todas las tareas en un Jupyter Notebook. Almacena todo el código en las celdas code y las explicaciones de texto en las celdas markdown.
+Añade títulos y el formato adecuado si es necesario.
