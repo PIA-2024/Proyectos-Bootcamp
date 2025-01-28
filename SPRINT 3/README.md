@@ -61,17 +61,22 @@ Paso 3: Una vez que los datos estén procesados y listos, haz el siguiente anál
 * Crea un gráfico que muestre el número de personas que hacen pedidos dependiendo de la hora del día.
 * Crea un gráfico que muestre qué día de la semana la gente hace sus compras.
 * Crea un gráfico que muestre el tiempo que la gente espera hasta hacer su próximo pedido, y comenta los valores mínimos y máximos.
-* 
+  
 [B] (deben completarse todos para aprobar)
 
 1 ¿Hay alguna diferencia en las distribuciones de 'order_hour_of_day' en miércoles y sábados? Traza los histogramas de ambos días en el mismo gráfico y describe las diferencias que observes.
-Traza la distribución del número de pedidos que hacen los clientes y las clientas (por ejemplo, cuántos clientes hicieron un solo pedido, cuántos hicieron solo dos, cuántos solo tres, etc.)
-2 ¿Cuáles son los 20 principales productos que se piden con más frecuencia (muestra su identificación y nombre)?
+
+2 Traza la distribución del número de pedidos que hacen los clientes y las clientas (por ejemplo, cuántos clientes hicieron un solo pedido, cuántos hicieron solo dos, cuántos solo tres, etc.)
+
+3 ¿Cuáles son los 20 principales productos que se piden con más frecuencia (muestra su identificación y nombre)?
 
 [C] (deben completarse todos para aprobar)
 
 1 ¿Cuántos artículos compra la gente por lo general en un pedido? ¿Cómo es la distribución?
+
 2 ¿Cuáles son los 20 principales artículos que se vuelven a pedir con más frecuencia (muestra sus nombres e identificaciones de producto)?
 Para cada producto, ¿qué proporción de sus pedidos se vuelven a pedir (crea una tabla con columnas para el ID del producto, el nombre del producto y la proporción en que se ha vuelto a comprar)?
+
 3 ¿Cuál es la proporción de productos pedidos que se vuelven a pedir para cada cliente?
+
 4 ¿Cuáles son los 20 principales artículos que la gente pone en sus carritos primero (muestra las identificaciones de los productos, los nombres de los productos y el número de veces que fueron el primer artículo añadido al carrito)?
