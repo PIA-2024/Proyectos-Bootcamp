@@ -1,4 +1,9 @@
+# PROYECTO SPRINT 3: Manipulación de datos (Data Wrangling)
+"Preparar un informe con visualizaciones que brinde informacion sobre los habitos de compra de los clientes de una plataforma de entrega de comestibles."
 
+En este proyecto se ponen a prueba las capacidades de modificar dataframes para obtener datos de mayor relevancia para el analisis.
+
+Las habilidades/herramientas utilizadas: Procesamiento de datos, Analisis exploratorio, Explicación de datos, Analisis estadistico , 
 
 # Descripción del proyecto
 Para este proyecto, trabajarás con datos de Instacart.
