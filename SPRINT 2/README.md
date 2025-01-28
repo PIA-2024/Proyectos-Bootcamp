@@ -1,4 +1,5 @@
-#PROYECTO SPRINT 2:
+# PROYECTO SPRINT 2:
+
 "Probar una hipótesis de producto analizando datos de usuario para incrementar la fidelizacion de clientes en un servicio de streaming musical." En este proyecto se pone a prueba el manejo de dataframes, la limpieza de datos y la capacidad de relacionar dafaframes distintos.
 
 Las herramientas utilizadas son: Python , Analisis estadistico, Procesamiento de datos.
