@@ -1,60 +1,50 @@
 # 🛢️ Análisis Predictivo para la Exploración de Petróleo en OilyGiant
 
 # 📖 Resumen del Proyecto
-La empresa OilyGiant busca optimizar sus inversiones en exploración de petróleo utilizando modelos de machine learning para predecir qué regiones tienen mayores probabilidades de contener yacimientos rentables.
-
-El objetivo principal del proyecto es desarrollar un modelo predictivo que, basado en datos geológicos y de perforación, pueda identificar las regiones más prometedoras para la extracción de petróleo, maximizando la rentabilidad y minimizando los riesgos financieros.
-
-Se evaluaron distintos modelos de regresión para predecir la cantidad de barriles de petróleo extraídos en diferentes ubicaciones.
+La empresa OilyGiant busca optimizar sus inversiones en exploración de petróleo mediante el uso de modelos de Machine Learning para predecir qué regiones tienen mayores probabilidades de contener yacimientos rentables. El objetivo principal es desarrollar un modelo predictivo que, basado en datos geológicos y de perforación, identifique las áreas más prometedoras para la extracción de petróleo, maximizando la rentabilidad y minimizando los riesgos financieros.
 
 # 🛠 Metodología Utilizada
-El proyecto se dividió en varias etapas clave:
+Para alcanzar los objetivos del proyecto, se siguió una metodología estructurada en varias etapas:
 
 # 🔍 1. Exploración y Análisis de Datos (EDA)
-Carga y revisión del dataset con información geológica de distintas regiones.
-Análisis de la distribución de las variables numéricas y detección de valores atípicos.
-Identificación de correlaciones entre características geológicas y el volumen de petróleo extraído.
-Comparación de datos entre distintas regiones para evaluar diferencias en la extracción.
+Carga del Dataset: Se recopiló información geológica y de perforación de diversas regiones.
+Análisis Descriptivo: Se evaluó la distribución de las variables numéricas y se identificaron posibles valores atípicos.
+Correlación de Variables: Se analizaron las relaciones entre las características geológicas y el volumen de petróleo extraído.
+Comparación Regional: Se compararon los datos entre diferentes regiones para evaluar diferencias en la extracción y características geológicas.
 
 # 🏗️ 2. Preprocesamiento de Datos
-Manejo de valores nulos y datos inconsistentes.
-Escalado de variables numéricas para mejorar el rendimiento del modelo.
-División del dataset en conjunto de entrenamiento (80%) y prueba (20%).
+Manejo de Valores Nulos: Se implementaron estrategias para tratar datos faltantes o inconsistentes.
+Codificación de Variables Categóricas: Se aplicaron técnicas como One-Hot Encoding para transformar variables categóricas en numéricas.
+Escalado de Variables: Se normalizaron las variables numéricas para mejorar el rendimiento de los modelos.
+División de Datos: El conjunto de datos se dividió en conjuntos de entrenamiento y prueba para validar los modelos.
 
-# 🤖 3. Entrenamiento de Modelos Predictivos
-Se probaron varios modelos de regresión supervisada para predecir el volumen de petróleo extraído en una ubicación dada:
+# 🤖 3. Desarrollo y Entrenamiento de Modelos
+Se evaluaron varios modelos de regresión para predecir la cantidad de barriles de petróleo extraídos en diferentes ubicaciones:
 
-Regresión Lineal → Modelo base para evaluar desempeño inicial.
-Árboles de Decisión → Para capturar relaciones no lineales en los datos.
-Random Forest → Modelo basado en ensambles para mejorar predicciones.
-Gradient Boosting (XGBoost, LightGBM) → Modelos avanzados para optimización de predicciones.
+Regresión Lineal: Como modelo base para establecer una línea de referencia.
+Regresión Ridge y Lasso: Para manejar la multicolinealidad y seleccionar variables relevantes.
+Árboles de Decisión y Random Forest: Para capturar relaciones no lineales y mejorar la precisión de las predicciones.
+Gradient Boosting: Para optimizar el rendimiento del modelo mediante el ensamble de predictores débiles.
+Se realizó una búsqueda de hiperparámetros utilizando Grid Search para optimizar el rendimiento de los modelos.
 
 # 🎯 4. Evaluación del Modelo
-Comparación de modelos utilizando métricas como:
-RMSE (Error Cuadrático Medio) → Para medir la precisión de la predicción.
-R² (Coeficiente de Determinación) → Para evaluar el ajuste del modelo.
-Análisis de la importancia de variables en la predicción del volumen de petróleo.
-Selección del modelo más eficiente en función del trade-off entre precisión y costo computacional.
+Métricas de Evaluación: Se utilizaron métricas como el Error Cuadrático Medio (MSE) y el Coeficiente de Determinación (R²) para evaluar el rendimiento de los modelos.
+Validación Cruzada: Se implementó la validación cruzada para asegurar la generalización de los modelos y prevenir el sobreajuste.
+Análisis de Residuos: Se analizaron los residuos de las predicciones para identificar patrones no capturados por los modelos.
 
 # 📚 Librerías Utilizadas
-Para la implementación del modelo de predicción, se utilizaron las siguientes librerías en Python:
+Para la implementación del proyecto, se emplearon las siguientes librerías en Python:
 
-Pandas / NumPy → Manipulación y análisis de datos.
-Matplotlib / Seaborn → Visualización de datos.
-Scikit-learn → Modelos de regresión, métricas y optimización.
-LightGBM / XGBoost → Algoritmos avanzados de boosting para mejorar la predicción.
+Pandas / NumPy: Para la manipulación y análisis de datos.
+Matplotlib / Seaborn: Para la visualización de datos y resultados.
+Scikit-learn: Para la construcción y evaluación de modelos de Machine Learning.
+SciPy / Statsmodels: Para análisis estadísticos adicionales y pruebas de hipótesis.
 
 # 📈 Resultados y Conclusión
-El modelo de Random Forest obtuvo el mejor rendimiento, logrando un RMSE bajo y un R² alto, lo que indica una buena capacidad de predicción.
-Las características más relevantes para predecir la extracción de petróleo fueron:
-Presión del suelo en la región.
-Densidad del petróleo extraído.
-Profundidad de perforación.
-Se recomienda utilizar el modelo para evaluar nuevas regiones antes de invertir en perforaciones costosas, ayudando a minimizar pérdidas y optimizar la exploración.
-Futuras mejoras podrían incluir la integración de modelos de Deep Learning para mejorar aún más la predicción.
+Mejor Modelo: El modelo de Random Forest demostró el mejor rendimiento, con un R² elevado y un MSE bajo, indicando una alta precisión en las predicciones.
+Variables Relevantes: Las características geológicas como la porosidad, permeabilidad y profundidad de las formaciones fueron las más influyentes en las predicciones.
 
-
-
+Conclusión: El modelo desarrollado proporciona una herramienta valiosa para OilyGiant en la toma de decisiones sobre inversiones en exploración, permitiendo identificar regiones con alto potencial de extracción de petróleo y optimizar los recursos financieros.
 
 
 
