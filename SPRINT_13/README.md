@@ -1,55 +1,56 @@
-# 🚖 Análisis de Viajes y Predicción de Demanda para Sweet Lift Taxi
+# 🚖 Predicción de Cancelación de Clientes en Sweet Lift Taxi
 
 # 📖 Resumen del Proyecto
+El objetivo de este proyecto es predecir la cancelación de clientes en la empresa de transporte Sweet Lift Taxi, permitiendo a la compañía identificar patrones de abandono y desarrollar estrategias para mejorar la retención de clientes.
 
-El objetivo de este proyecto es analizar los patrones de viaje de Sweet Lift Taxi, una empresa de transporte por aplicación, y desarrollar un modelo de machine learning que permita predecir la demanda de viajes en función de diversas variables.
-
-Se busca entender qué factores influyen en la cantidad de viajes y cómo optimizar la asignación de conductores para mejorar la eficiencia del servicio.
+Para lograr esto, se entrenaron modelos de clasificación supervisada, utilizando datos demográficos y de comportamiento de los clientes. Se evaluó el desempeño de los modelos utilizando métricas como AUC-ROC y F1-score para determinar la mejor estrategia de predicción.
 
 # 🛠 Metodología Utilizada
-El proyecto sigue una metodología estructurada para el análisis y modelado de datos:
+Para desarrollar este modelo de clasificación, se siguieron los siguientes pasos:
 
-# 🔍 1. Exploración y Limpieza de Datos
-Carga del conjunto de datos de viajes y revisión de su estructura.
-Análisis de valores nulos y tratamiento de datos inconsistentes.
-Conversión de formatos de fechas y variables categóricas.
-Generación de nuevas variables relevantes para el análisis (e.g., día de la semana, hora del día).
+# 🔍 1. Exploración y Análisis de Datos (EDA)
+Carga del dataset con información sobre clientes de Sweet Lift Taxi.
+Revisión de la estructura del dataset, tipos de variables y distribución de datos.
+Identificación de valores nulos y tratamiento de datos inconsistentes.
+Análisis de correlaciones entre variables y la variable objetivo (cancelación del cliente: Sí / No).
 
-# 📊 2. Análisis Exploratorio de Datos (EDA)
-Distribución de la cantidad de viajes por día y por hora.
-Identificación de patrones temporales en la demanda.
-Análisis del impacto de factores externos, como el clima o eventos especiales.
-Visualización de tendencias y correlaciones entre variables.
+# 🏗️ 2. Preprocesamiento de Datos
+Conversión de datos categóricos mediante One-Hot Encoding y Label Encoding.
+Normalización de variables numéricas con StandardScaler o MinMaxScaler.
+Manejo del desbalance de clases con técnicas como undersampling, oversampling y SMOTE.
+División del dataset en conjunto de entrenamiento (80%) y prueba (20%).
 
-# 🏗️ 3. Preprocesamiento y Transformación de Datos
-Codificación de variables categóricas mediante One-Hot Encoding.
-Normalización de variables numéricas para mejorar el rendimiento del modelo.
-Creación de un conjunto de entrenamiento y prueba.
+# 🤖 3. Entrenamiento de Modelos de Machine Learning
+Se probaron distintos modelos de clasificación, incluyendo:
 
-# 🤖 4. Entrenamiento de Modelos de Machine Learning
-Se probaron y compararon varios modelos de predicción, incluyendo:
-
-Regresión Lineal → Para establecer una línea base en la predicción.
+Regresión Logística → Modelo base para evaluar el rendimiento inicial.
 Árboles de Decisión → Para capturar relaciones no lineales en los datos.
-Random Forest → Modelo basado en ensambles para mejorar precisión.
-Gradient Boosting (LightGBM/XGBoost) → Modelos avanzados para optimizar predicciones.
-Se realizó tuneo de hiperparámetros utilizando Grid Search y Random Search para mejorar el rendimiento del modelo.
+Random Forest → Modelo basado en ensambles para mejorar la predicción.
+Gradient Boosting (XGBoost, LightGBM) → Modelos avanzados para optimización de predicciones.
+Se realizó tuneo de hiperparámetros mediante Grid Search y Random Search para mejorar la precisión del modelo.
 
-# 🎯 5. Evaluación del Modelo
-Cálculo de métricas de desempeño: RMSE (Error Cuadrático Medio) y R² (Coeficiente de Determinación).
-Comparación de modelos y selección del más eficiente para la predicción de demanda.
+# 🎯 4. Evaluación del Modelo
+Comparación de modelos utilizando métricas clave:
+F1-score → Métrica principal para evaluar la clasificación.
+AUC-ROC → Para medir la capacidad de diferenciación del modelo.
+Precisión y Recall → Evaluación del equilibrio entre falsos positivos y negativos.
+Matriz de confusión para visualizar errores de clasificación.
 
 # 📚 Librerías Utilizadas
-El proyecto fue desarrollado en Python utilizando las siguientes librerías:
+Para la implementación del modelo, se usaron las siguientes librerías en Python:
 
-Pandas → Manipulación y limpieza de datos.
-NumPy → Operaciones matemáticas y manejo de arreglos.
+Pandas / NumPy → Manipulación y análisis de datos.
 Matplotlib / Seaborn → Visualización de datos.
-Scikit-learn → Modelos de machine learning, métricas y optimización.
-LightGBM / XGBoost → Modelos avanzados de boosting para predicción.
+Scikit-learn → Modelos de clasificación, métricas y optimización.
+Imbalanced-learn → Manejo del desbalance de clases con SMOTE.
+XGBoost / LightGBM → Algoritmos avanzados de boosting para mejorar la clasificación.
 
 # 📈 Resultados y Conclusión
-El modelo de Random Forest obtuvo la mejor precisión en la predicción de la demanda de viajes, con un RMSE bajo y un alto R².
-Los patrones de demanda muestran picos en horas punta (mañana y tarde), especialmente entre 7:00-9:00 AM y 5:00-7:00 PM.
-El clima influye significativamente en la cantidad de viajes, con un aumento en la demanda en días de lluvia.
-Se recomienda ajustar la asignación de conductores en función de estos patrones para reducir tiempos de espera y mejorar la experiencia del usuario.
+El modelo de Gradient Boosting (XGBoost) logró el mejor rendimiento, alcanzando un F1-score alto y un AUC-ROC superior a 0.85, lo que indica una excelente capacidad de predicción.
+Las variables más influyentes en la predicción de cancelación fueron:
+Frecuencia de uso del servicio.
+Método de pago utilizado.
+Tiempo desde el último viaje.
+Número de viajes realizados en los últimos meses.
+El manejo del desbalance de clases con SMOTE mejoró la capacidad predictiva del modelo, reduciendo falsos negativos.
+Se recomienda implementar estrategias de retención para los clientes con alta probabilidad de cancelar, como programas de fidelización o descuentos personalizados.
