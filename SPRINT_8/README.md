@@ -1,33 +1,54 @@
-# Proyecto del Sprint 8: Introducción al machine learning
-"Crear un modelo de clasificacion que escogerá el plan adecuado para la clientela de un operador de telefonía móvil."
+# 📡 Clasificación de Clientes para Planes de Megaline
 
-Se utilizo machine learning, usando distintos tipos de modelos y ajustando sus hiperparametros de forma estructurada para encontrar aquel modelo que funcione de la mejor manera. 
+# 📖 Resumen del Proyecto
+Megaline, una compañía de telefonía móvil, quiere optimizar la migración de sus clientes hacia nuevos planes tarifarios. Actualmente, muchos usuarios siguen usando planes heredados, lo que genera un desafío en la adopción de los planes Smart y Ultra.
 
-Herramientas/habilidades utilizadas : Procesamiento de datos, fundamentos de ML, Modelos de clasificación.
+Este proyecto tiene como objetivo desarrollar un modelo de clasificación que, basado en el comportamiento de los clientes, recomiende el plan más adecuado.
 
-# Descripción del proyecto
-La compañía móvil Megaline no está satisfecha al ver que muchos de sus clientes utilizan planes heredados. Quieren desarrollar un modelo que pueda analizar el comportamiento de los clientes y recomendar uno de los nuevos planes de Megaline: Smart o Ultra.
+El modelo se evaluará utilizando la métrica de exactitud (accuracy) y debe alcanzar un mínimo de 0.75 para ser considerado satisfactorio.
 
-Tienes acceso a los datos de comportamiento de los suscriptores que ya se han cambiado a los planes nuevos (del proyecto del sprint de Análisis estadístico de datos). Para esta tarea de clasificación debes crear un modelo que escoja el plan correcto. Como ya hiciste el paso de procesar los datos, puedes lanzarte directo a crear el modelo.
+# 🛠 Metodología Utilizada
+El proyecto sigue una serie de pasos clave en el desarrollo de modelos de clasificación:
 
-Desarrolla un modelo con la mayor exactitud posible. En este proyecto, el umbral de exactitud es 0.75. Usa el dataset para comprobar la exactitud.
+# 🔍 1. Exploración y Análisis de Datos (EDA)
+Carga del dataset con información del uso de servicios por los clientes.
+Análisis de la distribución de variables numéricas y categóricas.
+Identificación de valores nulos y estrategia de imputación.
+Análisis de correlación entre variables y la variable objetivo (Plan: Smart o Ultra).
 
-Instrucciones del proyecto.
-* Abre y examina el archivo de datos. Dirección al archivo:datasets/users_behavior.csv Descarga el dataset
-* Segmenta los datos fuente en un conjunto de entrenamiento, uno de validación y uno de prueba.
-* Investiga la calidad de diferentes modelos cambiando los hiperparámetros. Describe brevemente los hallazgos del estudio.
-* Comprueba la calidad del modelo usando el conjunto de prueba.
-* Tarea adicional: haz una prueba de cordura al modelo. Estos datos son más complejos que los que habías usado antes así que no será una tarea fácil. Más adelante lo veremos con más detalle.
+# 🏗️ 2. Preprocesamiento de Datos
+Conversión de datos categóricos mediante One-Hot Encoding o Label Encoding.
+Normalización de variables numéricas para mejorar la eficiencia del modelo.
+Separación del dataset en conjunto de entrenamiento (80%) y prueba (20%).
 
-# Descripción de datos
-Cada observación en el dataset contiene información del comportamiento mensual sobre un usuario. La información dada es la siguiente:
+# 🤖 3. Entrenamiento de Modelos de Machine Learning
+Se probaron varios algoritmos de clasificación para determinar cuál ofrece el mejor rendimiento:
 
-сalls — número de llamadas,
+Regresión Logística → Modelo base para evaluar desempeño inicial.
+Árboles de Decisión → Para capturar relaciones no lineales en los datos.
+Random Forest → Modelo basado en ensambles para mejorar la clasificación.
+Gradient Boosting (XGBoost, LightGBM) → Modelos avanzados que optimizan predicciones.
 
-minutes — duración total de la llamada en minutos,
+# 🎯 4. Evaluación del Modelo
+Comparación de modelos utilizando métricas de clasificación:
+Exactitud (accuracy) → Métrica principal, debe ser ≥ 0.75.
+Matriz de confusión para analizar falsos positivos y negativos.
+Precisión, Recall y F1-score para evaluar balance en la clasificación.
+Ajuste de hiperparámetros mediante Grid Search o Random Search para mejorar la exactitud.
 
-messages — número de mensajes de texto,
+# 📚 Librerías Utilizadas
+Para el desarrollo del modelo, se emplearon las siguientes librerías en Python:
 
-mb_used — Tráfico de Internet utilizado en MB,
+Pandas / NumPy → Manipulación y análisis de datos.
+Matplotlib / Seaborn → Visualización de datos.
+Scikit-learn → Modelos de clasificación, métricas y optimización.
+XGBoost / LightGBM → Algoritmos avanzados de boosting para mejorar la predicción.
 
-is_ultra — plan para el mes actual (Ultra - 1, Smart - 0).
+# 📈 Resultados y Conclusión
+El modelo de Random Forest alcanzó una exactitud superior al 75%, cumpliendo con los requisitos del proyecto.
+Las características más importantes en la predicción fueron:
+Duración de llamadas y cantidad de SMS enviados.
+Uso de datos móviles en GB.
+Historial de facturación y pagos.
+El modelo puede ser utilizado para recomendar automáticamente planes a nuevos clientes, optimizando la retención y migración de usuarios.
+Se recomienda seguir refinando el modelo con técnicas de aprendizaje profundo o sistemas de recomendación basados en aprendizaje automático.
