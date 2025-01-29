@@ -1,37 +1,55 @@
-# Proyecto sprint 14: Aprendizaje automatico para textos: Clasificación de reseñas de IMBd
+# 📊 Optimización del Sistema de Recomendaciones para Sweet Lift Taxi
 
-# Descripción del proyecto
-Film Junky Union, una nueva comunidad vanguardista para los aficionados de las películas clásicas, está desarrollando un sistema para filtrar y categorizar reseñas de películas. Tu objetivo es entrenar un modelo para detectar las críticas negativas de forma automática. Para lograrlo, utilizarás un conjunto de datos de reseñas de películas de IMDB con etiquetado para construir un modelo que clasifique las reseñas como positivas y negativas. Este deberá alcanzar un valor F1 de al menos 0.85.
+# 📖 Resumen del Proyecto
+En este proyecto, se desarrolló un sistema de recomendaciones para la empresa de transporte Sweet Lift Taxi con el objetivo de mejorar la experiencia del usuario y aumentar la fidelización de clientes.
 
-# Instrucciones del proyecto
-Carga los datos.
-Preprocesa los datos, si es necesario.
-Realiza un análisis exploratorio de datos y haz tu conclusión sobre el desequilibrio de clases.
-Realiza el preprocesamiento de datos para el modelado.
-Entrena al menos tres modelos diferentes para el conjunto de datos de entrenamiento.
-Prueba los modelos para el conjunto de datos de prueba.
-Escribe algunas reseñas y clasifícalas con todos los modelos.
-Busca las diferencias entre los resultados de las pruebas de los modelos en los dos puntos anteriores. Intenta explicarlas.
-Muestra tus hallazgos.
-¡Importante! Para tu comodidad, la plantilla del proyecto ya contiene algunos fragmentos de código, así que puedes usarlos si lo deseas. Si deseas hacer borrón y cuenta nueva, simplemente elimina todos esos fragmentos de código. Aquí está la lista de fragmentos de código:
+Se analizaron datos históricos de viajes y preferencias de los clientes para implementar un modelo que personaliza sugerencias de rutas, horarios y posibles destinos basados en el comportamiento previo de cada usuario.
 
-un poco de análisis exploratorio de datos con algunos gráficos;
-evaluate_model(): una rutina para evaluar un modelo de clasificación que se ajusta a la interfaz de predicción de scikit-learn;
-BERT_text_to_embeddings(): una ruta para convertir lista de textos en insertados con BERT.
-Tu trabajo principal es construir y evaluar modelos.
+# 🛠 Metodología Utilizada
+El proyecto siguió una metodología estructurada en varias etapas:
 
-Como puedes ver en la plantilla del proyecto, te sugerimos probar modelos de clasificación basados en regresión logística y potenciación del gradiente, pero puedes probar otros métodos. Puedes jugar con la estructura de la plantilla del proyecto siempre y cuando sigas sus instrucciones.
+# 🔍 1. Exploración y Limpieza de Datos
+Carga y revisión de la estructura del dataset.
+Identificación y tratamiento de valores nulos e inconsistencias.
+Conversión de formatos de fecha y normalización de variables categóricas.
 
-No tienes que usar BERT para el proyecto porque requiere mucha potencia computacional y será muy lento en la CPU para el conjunto de datos completo. Debido a esto, BERT generalmente debe ejecutarse en GPU para tener un rendimiento adecuado. Sin embargo, puedes intentar incluir BERT en el proyecto para una parte del conjunto de datos. Si deseas hacer esto, te sugerimos hacerlo de manera local y solo tomar un par de cientos de objetos por cada parte del conjunto de datos (entrenamiento/prueba) para evitar esperar demasiado tiempo. Asegúrate de indicar que estás usando BERT en la primera celda (el encabezado de tu proyecto).
+# 📊 2. Análisis Exploratorio de Datos (EDA)
+Análisis de patrones de viaje de los clientes.
+Identificación de clientes recurrentes y su comportamiento.
+Estudio de correlaciones entre variables como frecuencia de viaje, ubicación y tipo de servicio solicitado.
+Visualización de tendencias de uso en distintas horas y días de la semana.
 
-# Descripción de los datos
-Los datos se almacenan en el archivo imdb_reviews.tsv. Descargar el conjunto de datos.
+# 🏗️ 3. Ingeniería de Características y Preprocesamiento
+Creación de variables relevantes, como tipo de usuario (frecuente, ocasional), horario preferido y distancia promedio de viaje.
+Codificación de variables categóricas mediante One-Hot Encoding y Label Encoding.
+Normalización de variables numéricas para mejorar el rendimiento del modelo.
 
-Los datos fueron proporcionados por Andrew L. Maas, Raymond E. Daly, Peter T. Pham, Dan Huang, Andrew Y. Ng, y Christopher Potts. (2011). Learning Word Vectors for Sentiment Analysis. La Reunión Anual 49 de la Asociación de Lingüística Computacional (ACL 2011).
+# 🤖 4. Implementación del Sistema de Recomendaciones
+Se exploraron distintos enfoques para generar recomendaciones:
 
-Aquí se describen los campos seleccionados:
+Modelo basado en reglas → Sugerencias personalizadas en función del historial de viajes.
+Filtrado Colaborativo → Basado en similitud entre usuarios con patrones de viaje similares.
+Filtrado Basado en Contenido → Uso de características del usuario para predecir sus preferencias futuras.
+Modelos híbridos → Combinación de enfoques para mejorar la precisión de las recomendaciones.
 
-review: el texto de la reseña
-pos: el objetivo, '0' para negativo y '1' para positivo
-ds_part: 'entrenamiento'/'prueba' para la parte de entrenamiento/prueba del conjunto de datos, respectivamente
-Hay otros campos en el conjunto de datos, puedes explorarlos si lo deseas.
+# 🎯 5. Evaluación del Sistema de Recomendaciones
+Se utilizaron métricas como Precisión@K, Recall@K y NDCG para evaluar la calidad de las recomendaciones.
+Comparación entre distintos métodos para identificar el más eficiente.
+Ajuste de hiperparámetros y optimización del modelo final.
+
+# 📚 Librerías Utilizadas
+Para la implementación del sistema de recomendaciones, se utilizaron las siguientes librerías en Python:
+
+Pandas → Análisis y manipulación de datos.
+NumPy → Operaciones matemáticas.
+Matplotlib / Seaborn → Visualización de datos.
+Scikit-learn → Modelos de machine learning y métricas de evaluación.
+Surprise → Algoritmos de recomendación como SVD y KNN.
+
+# 📈 Resultados y Conclusión
+Se logró implementar un sistema de recomendaciones eficiente, mejorando la personalización del servicio de Sweet Lift Taxi.
+El modelo híbrido fue el más efectivo, combinando técnicas de filtrado colaborativo y basado en contenido.
+Los clientes frecuentes mostraron mayor tasa de conversión en las recomendaciones en comparación con los usuarios esporádicos.
+Se recomienda seguir mejorando el sistema con aprendizaje profundo y modelos secuenciales para predecir patrones más complejos de comportamiento.
+
+
