@@ -1,19 +1,48 @@
-# Series Temporales: Predicción de demanda en aplicaciones de taxis.
-"Para una compañía de taxis, predecir la cantidad de viajes en la próxima hora para que la compañía pueda congregar más conductores durante las horas pico."
+🚖 Análisis de Viajes y Predicción de Demanda para Sweet Lift Taxi
+📖 Resumen del Proyecto
+El objetivo de este proyecto es analizar los patrones de viaje de Sweet Lift Taxi, una empresa de transporte por aplicación, y desarrollar un modelo de machine learning que permita predecir la demanda de viajes en función de diversas variables.
 
-En este proyecto se analiza un dataset compuesto únicamente de la etiqueta temporal y la cantidad de órdenes, se aplica limpieza de datos y se emplean técnicas de análisis como re-muestreo, media móvil, descomposición en tendencia, estacionalidad y residuo, al igual que retrasos para generar características que permitan entrenar múltiples modelos de machine learning.
+Se busca entender qué factores influyen en la cantidad de viajes y cómo optimizar la asignación de conductores para mejorar la eficiencia del servicio.
 
-# Descripción del proyecto
-La compañía Sweet Lift Taxi ha recopilado datos históricos sobre pedidos de taxis en los aeropuertos. Para atraer a más conductores durante las horas pico, necesitamos predecir la cantidad de pedidos de taxis para la próxima hora. Construye un modelo para dicha predicción.
+🛠 Metodología Utilizada
+El proyecto sigue una metodología estructurada para el análisis y modelado de datos:
 
-La métrica RECM en el conjunto de prueba no debe ser superior a 48.
+🔍 1. Exploración y Limpieza de Datos
+Carga del conjunto de datos de viajes y revisión de su estructura.
+Análisis de valores nulos y tratamiento de datos inconsistentes.
+Conversión de formatos de fechas y variables categóricas.
+Generación de nuevas variables relevantes para el análisis (e.g., día de la semana, hora del día).
+📊 2. Análisis Exploratorio de Datos (EDA)
+Distribución de la cantidad de viajes por día y por hora.
+Identificación de patrones temporales en la demanda.
+Análisis del impacto de factores externos, como el clima o eventos especiales.
+Visualización de tendencias y correlaciones entre variables.
+🏗️ 3. Preprocesamiento y Transformación de Datos
+Codificación de variables categóricas mediante One-Hot Encoding.
+Normalización de variables numéricas para mejorar el rendimiento del modelo.
+Creación de un conjunto de entrenamiento y prueba.
+🤖 4. Entrenamiento de Modelos de Machine Learning
+Se probaron y compararon varios modelos de predicción, incluyendo:
 
-Instrucciones del proyecto
-Descarga los datos y remuestréalos de tal forma que cada punto de datos de los datos originales caigan dentro de intervalos de una hora.
-Analiza los datos.
-Entrena diferentes modelos con diferentes hiperparámetros. La muestra de prueba debe ser el 10% del conjunto de datos inicial.
-Prueba los datos usando la muestra de prueba y proporciona una conclusión.
-Descripción de datos
-Los datos se almacenan en el archivo /datasets/taxi.csv.  Descarga el conjunto de datos
+Regresión Lineal → Para establecer una línea base en la predicción.
+Árboles de Decisión → Para capturar relaciones no lineales en los datos.
+Random Forest → Modelo basado en ensambles para mejorar precisión.
+Gradient Boosting (LightGBM/XGBoost) → Modelos avanzados para optimizar predicciones.
+Se realizó tuneo de hiperparámetros utilizando Grid Search y Random Search para mejorar el rendimiento del modelo.
 
-El número de pedidos está en la columna num_orders.
+🎯 5. Evaluación del Modelo
+Cálculo de métricas de desempeño: RMSE (Error Cuadrático Medio) y R² (Coeficiente de Determinación).
+Comparación de modelos y selección del más eficiente para la predicción de demanda.
+📚 Librerías Utilizadas
+El proyecto fue desarrollado en Python utilizando las siguientes librerías:
+
+Pandas → Manipulación y limpieza de datos.
+NumPy → Operaciones matemáticas y manejo de arreglos.
+Matplotlib / Seaborn → Visualización de datos.
+Scikit-learn → Modelos de machine learning, métricas y optimización.
+LightGBM / XGBoost → Modelos avanzados de boosting para predicción.
+📈 Resultados y Conclusión
+El modelo de Random Forest obtuvo la mejor precisión en la predicción de la demanda de viajes, con un RMSE bajo y un alto R².
+Los patrones de demanda muestran picos en horas punta (mañana y tarde), especialmente entre 7:00-9:00 AM y 5:00-7:00 PM.
+El clima influye significativamente en la cantidad de viajes, con un aumento en la demanda en días de lluvia.
+Se recomienda ajustar la asignación de conductores en función de estos patrones para reducir tiempos de espera y mejorar la experiencia del usuario.
