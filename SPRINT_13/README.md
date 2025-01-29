@@ -1,10 +1,12 @@
-🚖 Análisis de Viajes y Predicción de Demanda para Sweet Lift Taxi
-📖 Resumen del Proyecto
+🚖 # Análisis de Viajes y Predicción de Demanda para Sweet Lift Taxi
+
+📖 # Resumen del Proyecto
+
 El objetivo de este proyecto es analizar los patrones de viaje de Sweet Lift Taxi, una empresa de transporte por aplicación, y desarrollar un modelo de machine learning que permita predecir la demanda de viajes en función de diversas variables.
 
 Se busca entender qué factores influyen en la cantidad de viajes y cómo optimizar la asignación de conductores para mejorar la eficiencia del servicio.
 
-🛠 Metodología Utilizada
+🛠 # Metodología Utilizada
 El proyecto sigue una metodología estructurada para el análisis y modelado de datos:
 
 🔍 1. Exploración y Limpieza de Datos
