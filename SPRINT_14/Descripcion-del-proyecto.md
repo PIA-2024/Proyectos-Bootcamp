@@ -2,20 +2,24 @@
 Film Junky Union, una nueva comunidad vanguardista para los aficionados de las películas clásicas, está desarrollando un sistema para filtrar y categorizar reseñas de películas. Tu objetivo es entrenar un modelo para detectar las críticas negativas de forma automática. Para lograrlo, utilizarás un conjunto de datos de reseñas de películas de IMDB con etiquetado para construir un modelo que clasifique las reseñas como positivas y negativas. Este deberá alcanzar un valor F1 de al menos 0.85.
 
 # Instrucciones del proyecto
-Carga los datos.
-Preprocesa los datos, si es necesario.
-Realiza un análisis exploratorio de datos y haz tu conclusión sobre el desequilibrio de clases.
-Realiza el preprocesamiento de datos para el modelado.
-Entrena al menos tres modelos diferentes para el conjunto de datos de entrenamiento.
-Prueba los modelos para el conjunto de datos de prueba.
-Escribe algunas reseñas y clasifícalas con todos los modelos.
-Busca las diferencias entre los resultados de las pruebas de los modelos en los dos puntos anteriores. Intenta explicarlas.
-Muestra tus hallazgos.
+* Carga los datos.
+* Preprocesa los datos, si es necesario.
+* Realiza un análisis exploratorio de datos y haz tu conclusión sobre el desequilibrio de clases.
+* Realiza el preprocesamiento de datos para el modelado.
+* Entrena al menos tres modelos diferentes para el conjunto de datos de entrenamiento.
+* Prueba los modelos para el conjunto de datos de prueba.
+* Escribe algunas reseñas y clasifícalas con todos los modelos.
+* Busca las diferencias entre los resultados de las pruebas de los modelos en los dos puntos anteriores. Intenta explicarlas.
+* Muestra tus hallazgos.
+* 
 ¡Importante! Para tu comodidad, la plantilla del proyecto ya contiene algunos fragmentos de código, así que puedes usarlos si lo deseas. Si deseas hacer borrón y cuenta nueva, simplemente elimina todos esos fragmentos de código. Aquí está la lista de fragmentos de código:
 
-un poco de análisis exploratorio de datos con algunos gráficos;
+Un poco de análisis exploratorio de datos con algunos gráficos;
+
 evaluate_model(): una rutina para evaluar un modelo de clasificación que se ajusta a la interfaz de predicción de scikit-learn;
+
 BERT_text_to_embeddings(): una ruta para convertir lista de textos en insertados con BERT.
+
 Tu trabajo principal es construir y evaluar modelos.
 
 Como puedes ver en la plantilla del proyecto, te sugerimos probar modelos de clasificación basados en regresión logística y potenciación del gradiente, pero puedes probar otros métodos. Puedes jugar con la estructura de la plantilla del proyecto siempre y cuando sigas sus instrucciones.
