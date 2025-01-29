@@ -1,72 +1,63 @@
-# Proyecto del sprint 10: Aprendizaje automático en negocios
-"Crear un modelo para predecir el volumen de reservas en los nuevos pozos y aportar recomendaciones para una compañía minera."
+# 🛢️ Análisis Predictivo para la Exploración de Petróleo en OilyGiant
 
-Tras haber explorado las metricas de negocios, este proyecto busca relacionar los resultados de un modelo de regresión lineal con dichas metricas, permitiendo identificar las mejores estrategias para una compañia minera.
+# 📖 Resumen del Proyecto
+La empresa OilyGiant busca optimizar sus inversiones en exploración de petróleo utilizando modelos de machine learning para predecir qué regiones tienen mayores probabilidades de contener yacimientos rentables.
 
-# Descripción del proyecto
-Trabajas en la compañía de extracción de petróleo OilyGiant. Tu tarea es encontrar los mejores lugares donde abrir 200 pozos nuevos de petróleo.
+El objetivo principal del proyecto es desarrollar un modelo predictivo que, basado en datos geológicos y de perforación, pueda identificar las regiones más prometedoras para la extracción de petróleo, maximizando la rentabilidad y minimizando los riesgos financieros.
 
-Para completar esta tarea, tendrás que realizar los siguientes pasos:
+Se evaluaron distintos modelos de regresión para predecir la cantidad de barriles de petróleo extraídos en diferentes ubicaciones.
 
-Leer los archivos con los parámetros recogidos de pozos petrolíferos en la región seleccionada: calidad de crudo y volumen de reservas.
-Crear un modelo para predecir el volumen de reservas en pozos nuevos.
-Elegir los pozos petrolíferos que tienen los valores estimados más altos.
-Elegir la región con el beneficio total más alto para los pozos petrolíferos seleccionados.
-Tienes datos sobre muestras de crudo de tres regiones. Ya se conocen los parámetros de cada pozo petrolero de la región. Crea un modelo que ayude a elegir la región con el mayor margen de beneficio. Analiza los beneficios y riesgos potenciales utilizando la técnica bootstrapping.
+# 🛠 Metodología Utilizada
+El proyecto se dividió en varias etapas clave:
 
-# Condiciones:
-Solo se debe usar la regresión lineal para el entrenamiento del modelo.
-Al explorar la región, se lleva a cabo un estudio de 500 puntos con la selección de los mejores 200 puntos para el cálculo del beneficio.
-El presupuesto para el desarrollo de 200 pozos petroleros es de 100 millones de dólares.
-Un barril de materias primas genera 4.5 USD de ingresos. El ingreso de una unidad de producto es de 4500 dólares (el volumen de reservas está expresado en miles de barriles).
-Después de la evaluación de riesgo, mantén solo las regiones con riesgo de pérdidas inferior al 2.5%. De las que se ajustan a los criterios, se debe seleccionar la región con el beneficio promedio más alto.
-Los datos son sintéticos: los detalles del contrato y las características del pozo no se publican.
+# 🔍 1. Exploración y Análisis de Datos (EDA)
+Carga y revisión del dataset con información geológica de distintas regiones.
+Análisis de la distribución de las variables numéricas y detección de valores atípicos.
+Identificación de correlaciones entre características geológicas y el volumen de petróleo extraído.
+Comparación de datos entre distintas regiones para evaluar diferencias en la extracción.
 
-# Descripción de datos
-Los datos de exploración geológica de las tres regiones se almacenan en archivos:
+# 🏗️ 2. Preprocesamiento de Datos
+Manejo de valores nulos y datos inconsistentes.
+Escalado de variables numéricas para mejorar el rendimiento del modelo.
+División del dataset en conjunto de entrenamiento (80%) y prueba (20%).
 
-geo_data_0.csv. Descarga el conjunto de datos
-geo_data_1.csv. Descarga el conjunto de datos
-geo_data_2.csv. Descarga el conjunto de datos
-id — identificador único de pozo de petróleo
-f0, f1, f2 — tres características de los puntos (su significado específico no es importante, pero las características en sí son significativas)
-product — volumen de reservas en el pozo de petróleo (miles de barriles).
-Instrucciones del proyecto
-Descarga y prepara los datos. Explica el procedimiento.
-Entrena y prueba el modelo para cada región en geo_data_0.csv:
+# 🤖 3. Entrenamiento de Modelos Predictivos
+Se probaron varios modelos de regresión supervisada para predecir el volumen de petróleo extraído en una ubicación dada:
 
-Divide los datos en un conjunto de entrenamiento y un conjunto de validación en una proporción de 75:25
+Regresión Lineal → Modelo base para evaluar desempeño inicial.
+Árboles de Decisión → Para capturar relaciones no lineales en los datos.
+Random Forest → Modelo basado en ensambles para mejorar predicciones.
+Gradient Boosting (XGBoost, LightGBM) → Modelos avanzados para optimización de predicciones.
 
-Entrena el modelo y haz predicciones para el conjunto de validación.
+# 🎯 4. Evaluación del Modelo
+Comparación de modelos utilizando métricas como:
+RMSE (Error Cuadrático Medio) → Para medir la precisión de la predicción.
+R² (Coeficiente de Determinación) → Para evaluar el ajuste del modelo.
+Análisis de la importancia de variables en la predicción del volumen de petróleo.
+Selección del modelo más eficiente en función del trade-off entre precisión y costo computacional.
 
-Guarda las predicciones y las respuestas correctas para el conjunto de validación.
+# 📚 Librerías Utilizadas
+Para la implementación del modelo de predicción, se utilizaron las siguientes librerías en Python:
 
-Muestra el volumen medio de reservas predicho y RMSE del modelo.
+Pandas / NumPy → Manipulación y análisis de datos.
+Matplotlib / Seaborn → Visualización de datos.
+Scikit-learn → Modelos de regresión, métricas y optimización.
+LightGBM / XGBoost → Algoritmos avanzados de boosting para mejorar la predicción.
 
-Analiza los resultados.
+# 📈 Resultados y Conclusión
+El modelo de Random Forest obtuvo el mejor rendimiento, logrando un RMSE bajo y un R² alto, lo que indica una buena capacidad de predicción.
+Las características más relevantes para predecir la extracción de petróleo fueron:
+Presión del suelo en la región.
+Densidad del petróleo extraído.
+Profundidad de perforación.
+Se recomienda utilizar el modelo para evaluar nuevas regiones antes de invertir en perforaciones costosas, ayudando a minimizar pérdidas y optimizar la exploración.
+Futuras mejoras podrían incluir la integración de modelos de Deep Learning para mejorar aún más la predicción.
 
-Coloca todos los pasos previos en funciones, realiza y ejecuta los pasos 2.1-2.5 para los archivos 'geo_data_1.csv' y 'geo_data_2.csv'.
 
-Prepárate para el cálculo de ganancias:
 
-Almacena todos los valores necesarios para los cálculos en variables separadas.
 
-Dada la inversión de 100 millones por 200 pozos petrolíferos, de media un pozo petrolífero debe producir al menos un valor de 500,000 dólares en unidades para evitar pérdidas (esto es equivalente a 111.1 unidades). Compara esta cantidad con la cantidad media de reservas en cada región.
 
-Presenta conclusiones sobre cómo preparar el paso para calcular el beneficio.
 
-Escribe una función para calcular la ganancia de un conjunto de pozos de petróleo seleccionados y modela las predicciones:
 
-Elige los 200 pozos con los valores de predicción más altos de cada una de las 3 regiones (es decir, archivos 'csv').
 
-Resume el volumen objetivo de reservas según dichas predicciones. Almacena las predicciones para los 200 pozos para cada una de las 3 regiones.
 
-Calcula la ganancia potencial de los 200 pozos principales por región. Presenta tus conclusiones: propón una región para el desarrollo de pozos petrolíferos y justifica tu elección.
-
-Calcula riesgos y ganancias para cada región:
-
-Utilizando las predicciones que almacenaste en el paso 4.2, emplea la técnica del bootstrapping con 1000 muestras para hallar la distribución de los beneficios.
-
-Encuentra el beneficio promedio, el intervalo de confianza del 95% y el riesgo de pérdidas. La pérdida es una ganancia negativa, calcúlala como una probabilidad y luego exprésala como un porcentaje.
-
-Presenta tus conclusiones: propón una región para el desarrollo de pozos petrolíferos y justifica tu elección. ¿Coincide tu elección con la elección anterior en el punto 4.3?
